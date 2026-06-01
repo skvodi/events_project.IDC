@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель менеджера</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/manager.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <h1>Панель менеджера</h1>
+            <a href="/references.html">Справочники</a>
+            <a href="/event-create.html">Создать мероприятие</a>
+            <a href="/api/logout">Выйти</a>
+        </div>
+
+        <h2>Список мероприятий</h2>
+        <div id="events"></div>
+    </div>
+    <script>
+        window.dashboardAllowedRoles = ["admin", "manager"];
+    </script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>

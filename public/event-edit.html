@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование мероприятия</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/admin.html" id="backToDashboardLink">← К списку</a>
+            <h1>Редактирование мероприятия</h1>
+            <a href="/references.html">Справочники</a>
+            <a href="/api/logout">Выйти</a>
+        </div>
+
+        <form id="eventEditForm" class="event-form">
+            <input type="text" name="name" placeholder="Название" required>
+            <textarea name="description" placeholder="Описание" rows="3"></textarea>
+            <select name="city_id" required>
+                <option value="">Выберите город</option>
+            </select>
+            <input type="text" name="address" placeholder="Адрес">
+            <select name="category_id" required>
+                <option value="">Выберите категорию</option>
+            </select>
+            <input type="datetime-local" name="event_date" required>
+            <input type="datetime-local" name="registration_end" placeholder="Окончание регистрации">
+            <select name="option_ids" multiple size="6" aria-label="Опции мероприятия"></select>
+            <small>Для множественного выбора удерживайте Ctrl или Shift.</small>
+            <label class="file-upload-label">
+                <span>Добавить фото</span>
+                <input type="file" name="photos" accept="image/*" multiple>
+            </label>
+            <label class="file-upload-label">
+                <span>Добавить файлы</span>
+                <input type="file" name="files" multiple>
+            </label>
+            <input type="number" name="max_participants" placeholder="Макс. участников (необязательно)" min="0">
+            <div class="btn-row">
+                <button type="submit">Сохранить</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        window.dashboardAllowedRoles = ["admin", "manager"];
+    </script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Справочники</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/references.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <h1>Справочники</h1>
+            <a href="/admin.html" id="backToDashboardLink">← Назад</a>
+            <a href="/api/logout">Выйти</a>
+        </div>
+
+        <!-- Вкладки -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'cities')">Города</button>
+            <button class="tab-btn" onclick="switchTab(event, 'categories')">Категории</button>
+            <button class="tab-btn" onclick="switchTab(event, 'roles')">Роли</button>
+            <button class="tab-btn" onclick="switchTab(event, 'statuses')">Статусы</button>
+            <button class="tab-btn" onclick="switchTab(event, 'employees')">Работники</button>
+            <button class="tab-btn" onclick="switchTab(event, 'options')">Опции мероприятий</button>
+        </div>
+
+        <!-- Города -->
+        <div class="tab-content active" id="tab-cities">
+            <h2>Города</h2>
+            <form class="ref-form" onsubmit="addItem(event, 'cities')">
+                <input type="text" name="name" placeholder="Название города" required>
+                <button type="submit">Добавить</button>
+            </form>
+            <div id="list-cities"></div>
+        </div>
+
+        <!-- Категории -->
+        <div class="tab-content" id="tab-categories">
+            <h2>Категории</h2>
+            <form class="ref-form" onsubmit="addItem(event, 'categories')">
+                <input type="text" name="name" placeholder="Название категории" required>
+                <button type="submit">Добавить</button>
+            </form>
+            <div id="list-categories"></div>
+        </div>
+
+        <!-- Роли -->
+        <div class="tab-content" id="tab-roles">
+            <h2>Роли</h2>
+            <form class="ref-form" onsubmit="addItem(event, 'roles')">
+                <input type="text" name="name" placeholder="Название роли" required>
+                <input type="number" name="priority" placeholder="Приоритет" required min="1">
+                <button type="submit">Добавить</button>
+            </form>
+            <div id="list-roles"></div>
+        </div>
+
+        <!-- Статусы -->
+        <div class="tab-content" id="tab-statuses">
+            <h2>Статусы</h2>
+            <form class="ref-form" onsubmit="addItem(event, 'statuses')">
+                <input type="text" name="name" placeholder="Название статуса" required>
+                <button type="submit">Добавить</button>
+            </form>
+            <div id="list-statuses"></div>
+        </div>
+
+        <!-- Работники -->
+        <div class="tab-content" id="tab-employees">
+            <h2>Работники</h2>
+            <form class="ref-form" id="employeeForm" onsubmit="addEmployee(event)">
+                <input type="text" name="full_name" placeholder="ФИО" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="phone" placeholder="Телефон">
+                <input type="password" name="password" placeholder="Пароль" required>
+                <select name="role_id" id="employee-role-select" required>
+                    <option value="">Выберите роль</option>
+                </select>
+                <button type="submit">Добавить</button>
+            </form>
+            <div id="list-employees"></div>
+        </div>
+
+        <!-- Опции мероприятий -->
+        <div class="tab-content" id="tab-options">
+            <h2>Опции мероприятий</h2>
+            <form class="ref-form option-form" id="optionForm" onsubmit="saveEventOption(event)">
+                <input type="hidden" name="id">
+                <div class="option-main-row">
+                    <input type="text" name="name" placeholder="Название опции" required>
+                    <div class="option-type-row">
+                        <select name="type_id" required></select>
+                        <label class="checkbox-row">
+                            <input type="checkbox" name="is_required">
+                            <span>Обязательная опция</span>
+                        </label>
+                    </div>
+                </div>
+                <textarea class="option-values-field" name="values" placeholder="Значения для выбора, каждое с новой строки" rows="3"></textarea>
+                <div class="btn-row option-buttons">
+                    <button type="submit">Сохранить</button>
+                    <button type="button" class="btn-warning" onclick="resetOptionForm()">Очистить</button>
+                </div>
+            </form>
+            <div id="list-options"></div>
+        </div>
+    </div>
+
+    <script src="/js/references.js"></script>
+</body>
+</html>

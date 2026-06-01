@@ -1,0 +1,21 @@
+.event {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: white;
+}
+
+.event h3 {
+    margin-top: 0;
+}
+
+.event.registered {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.event.full {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+}

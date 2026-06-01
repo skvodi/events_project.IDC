@@ -1,0 +1,128 @@
+.tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+    padding: 8px 16px;
+}
+
+.tab-btn:hover {
+    background-color: #e9ecef;
+}
+
+.tab-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.ref-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.ref-form input,
+.ref-form select,
+.ref-form textarea {
+    flex: 1;
+    min-width: 150px;
+}
+
+.ref-form button {
+    align-self: flex-start;
+    white-space: nowrap;
+}
+
+.option-form {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.option-main-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.option-main-row > input {
+    flex: 1;
+}
+
+.option-type-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 400px;
+    flex-wrap: wrap;
+}
+
+.option-type-row select {
+    flex: 1;
+    min-width: 240px;
+}
+
+.option-type-row .checkbox-row {
+    flex: 0 0 auto;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.option-values-field {
+    width: 100%;
+    box-sizing: border-box;
+    flex: none;
+}
+
+.option-buttons {
+    align-self: flex-start;
+    margin-top: 0;
+}
+
+.ref-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.ref-item-view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: white;
+}
+
+.ref-item-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+}
